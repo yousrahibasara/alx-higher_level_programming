@@ -1,39 +1,22 @@
 #!/usr/bin/python3
-"""Define a class Square."""
+"""Magic class from a given ByteCode."""
+import math
 
 
-class Square:
-    """Represent a square."""
-
-    def __init__(self, size):
-        """Initialize a new square.
-        Args:
-            size (int): The size of the new square.
-        """
-        self.size = size
-
-    @property
-    def size(self):
-        """Get/set the current size of the square."""
-        return (self.__size)
-
-    @size.setter
-    def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
+class MagicClass:
+    """Initialization of the MagicClass."""
+    def __init__(self, radius=0):
+        """magic class constructor"""
+        self._MagicClass__radius = 0
+        if type(radius) is not int and type(radius) is not float:
+            raise TypeError("radius must be a number")
+        self._MagicClass__radius = radius
 
     def area(self):
-        """Return the current area of the square."""
-        return (self.__size * self.__size)
+        """Calculation of the area."""
+        return self._MagicClass__radius ** 2 * math.pi
 
-    def my_print(self):
-        """Print the square with the # character."""
-        for i in range(0, self.__size):
-            [print("#", end="") for j in range(self.__size)]
-            print("")
-        if self.__size == 0:
-            print("")
+    def circumference(self):
+        """Calculation of the circumference."""
+        return 2 * math.pi * self._MagicClass__radius
 
